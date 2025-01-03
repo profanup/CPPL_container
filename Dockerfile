@@ -14,18 +14,3 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get install -y build-essential manpages-dev && \
     gcc --version
-    
-# Install Haskeell Platform 
-RUN apt-get update && \
-    apt-get install -y haskell-platform && \
-    apt-get install -y nano vim && \
-    ghci --version
-
-
-# Install JDK and JRE from ubuntu repository
-RUN apt-get install -y openjdk-11-jdk openjdk-11-jre && \
-    export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 && \
-    echo JAVA_HOME && \
-    export PATH=$PATH:$JAVA_HOME/bin && \
-    echo $PATH
-
